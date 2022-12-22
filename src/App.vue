@@ -15,7 +15,7 @@ export default {
   methods: {
     async chatGpt(question) {
       const configuration = new Configuration({
-        apiKey: "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",
+        apiKey: "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",
       });
       const openai = new OpenAIApi(configuration);
       const response = await openai.createCompletion({
