@@ -1,4 +1,5 @@
 <script>
+import { DOMDirectiveTransforms } from "@vue/compiler-dom";
 import { Configuration, OpenAIApi } from "openai"
 export default {
 
@@ -14,8 +15,9 @@ export default {
 
   methods: {
     async chatGpt(question) {
+      console.log(import.meta.env)
       const configuration = new Configuration({
-        apiKey: "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",
+        apiKey: import.meta.env.VITE_OPENAI_API_KEY,
       });
       const openai = new OpenAIApi(configuration);
       const response = await openai.createCompletion({
